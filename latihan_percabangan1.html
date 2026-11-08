@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Penilaian Siswa</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+
+        <h2>Sistem Penilaian Siswa</h2>
+
+        <p>Masukkan Nilai Siswa:</p>
+
+        <input type="number" id="nilai"
+        placeholder="Masukkan nilai">
+
+        <br>
+
+        <button onclick="cekNilai()">
+            Periksa Nilai
+        </button>
+
+        <p id="hasil"></p>
+
+    </div>
+
+    <script>
+        function cekNilai() {
+
+            let nilai = Number(
+                document.getElementById("nilai").value
+            );
+
+            if (nilai >= 75) {
+                document.getElementById("hasil").innerHTML =
+                "Selamat! Kamu Lulus";
+            } else {
+                document.getElementById("hasil").innerHTML =
+                "Maaf, Kamu Remedial";
+            }
+
+        }
+    </script>
+
+</body>
+</html>
