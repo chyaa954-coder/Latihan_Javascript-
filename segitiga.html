@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Segitiga</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            color: #2875ad;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="bingkai">
+
+    <h2>Program Segitiga</h2>
+
+    <p>Masukkan jumlah baris:</p>
+
+    <input type="number" id="baris"
+    placeholder="Contoh: 5">
+
+    <br>
+
+    <button onclick="buatSegitiga()">
+        Tampilkan Segitiga
+    </button>
+
+    <pre id="hasil"></pre>
+
+</div>
+
+<script>
+    function buatSegitiga() {
+
+        let baris = Number(
+            document.getElementById("baris").value
+        );
+
+        let hasil = "";
+
+        if (baris < 1 || !Number.isInteger(baris)) {
+            hasil = "Masukkan jumlah baris yang benar!";
+        }
+
+        else {
+            for (let i = 1; i <= baris; i++) {
+
+                for (let j = 1; j <= i; j++) {
+                    hasil += "*";
+                }
+
+                hasil += "\n";
+            }
+        }
+
+        document.getElementById("hasil").innerHTML = hasil;
+
+    }
+</script>
+
+</body>
+</html>
