@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Persegi Panjang Kosong</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .bingkai {
+            background: white;
+            border: 3px solid blue;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        pre {
+            font-size: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+        <h2>Persegi Panjang Kosong</h2>
+
+        <label>Panjang:</label>
+        <input type="number" id="panjang">
+
+        <br><br>
+
+        <label>Lebar:</label>
+        <input type="number" id="lebar">
+
+        <br><br>
+
+        <button onclick="buatPersegi()">Tampilkan</button>
+
+        <pre id="hasil"></pre>
+    </div>
+
+    <script>
+        function buatPersegi() {
+            let panjang = Number(document.getElementById("panjang").value);
+            let lebar = Number(document.getElementById("lebar").value);
+
+            let hasil = "";
+
+            if (panjang < 2 || lebar < 2) {
+                hasil = "Masukkan angka minimal 2!";
+            } else {
+                for (let i = 1; i <= lebar; i++) {
+                    for (let j = 1; j <= panjang; j++) {
+
+                        if (i == 1 || i == lebar ||
+                            j == 1 || j == panjang) {
+                            hasil += "* ";
+                        } else {
+                            hasil += "  ";
+                        }
+                    }
+                    hasil += "\n";
+                }
+            }
+
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+
+</body>
+</html>
