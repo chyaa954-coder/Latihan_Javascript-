@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Konversi Kode Peran</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+
+        <h2>Konversi Kode Peran</h2>
+
+        <p>Masukkan Kode Role:</p>
+
+        <input type="text" id="role"
+        placeholder="Masukkan A atau U">
+
+        <br>
+
+        <button onclick="cekRole()">
+            Periksa Role
+        </button>
+
+        <p id="hasil"></p>
+
+    </div>
+
+    <script>
+        function cekRole() {
+
+            let role = document.getElementById("role").value.toUpperCase();
+
+            switch (role) {
+                case "A":
+                    document.getElementById("hasil").innerHTML =
+                    "Role: Admin";
+                    break;
+
+                case "U":
+                    document.getElementById("hasil").innerHTML =
+                    "Role: User";
+                    break;
+
+                default:
+                    document.getElementById("hasil").innerHTML =
+                    "Role: Guest";
+            }
+
+        }
+    </script>
+
+</body>
+</html>
