@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Segitiga Sama Sisi Angka</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .bingkai {
+            background: white;
+            border: 3px solid blue;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        pre {
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+        <h2>Segitiga Sama Sisi Angka</h2>
+
+        <label>Masukkan jumlah baris:</label>
+        <br><br>
+
+        <input type="number" id="baris">
+
+        <br><br>
+
+        <button onclick="buatSegitiga()">Tampilkan</button>
+
+        <pre id="hasil"></pre>
+    </div>
+
+    <script>
+       function buatSegitiga() {
+    let baris = Number(document.getElementById("baris").value);
+    let angka = 1;
+    let hasil = "";
+
+    if (baris <= 0 || !Number.isInteger(baris)) {
+        hasil = "Masukkan jumlah baris yang benar!";
+    } else {
+        for (let i = 1; i <= baris; i++) {
+            let spasi = " ".repeat((baris - i) * 3);
+
+            hasil += spasi;
+
+            for (let j = 1; j <= i; j++) {
+                hasil += String(angka).padStart(3, " ");
+                angka++;
+            }
+
+            hasil += "\n";
+        }
+    }
+
+    document.getElementById("hasil").textContent = hasil;
+       }
+    </script>
+
+</body>
+</html>
