@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Balik String</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            color: #2875ad;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+
+        <h2>Balik String</h2>
+
+        <p>Masukkan sebuah kata:</p>
+
+        <input type="text" id="kata"
+        placeholder="Masukkan kata">
+
+        <br>
+
+        <button onclick="balikString()">
+            Balik Kata
+        </button>
+
+        <p id="hasil"></p>
+
+    </div>
+
+    <script>
+        function balikString() {
+
+            let kata = document.getElementById("kata").value;
+
+            let hasil = kata.split("").reverse().join("");
+
+            document.getElementById("hasil").innerHTML =
+            "Hasil: " + hasil;
+
+        }
+    </script>
+
+</body>
+</html>
