@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan FizzBuzz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            color: #2875ad;
+            font-weight: bold;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+
+        <h2>Program FizzBuzz</h2>
+
+        <p>Masukkan angka:</p>
+
+        <input type="number" id="angka"
+        placeholder="Masukkan angka">
+
+        <br>
+
+        <button onclick="cekFizzBuzz()">
+            Periksa Angka
+        </button>
+
+        <p id="hasil"></p>
+
+    </div>
+
+    <script>
+        function cekFizzBuzz() {
+
+            let angka = Number(
+                document.getElementById("angka").value
+            );
+
+            let hasil = "";
+
+            if (document.getElementById("angka").value === "") {
+                hasil = "Masukkan angka terlebih dahulu!";
+            }
+
+            else if (angka % 15 === 0) {
+                hasil = "FizzBuzz";
+            }
+
+            else if (angka % 3 === 0) {
+                hasil = "Fizz";
+            }
+
+            else if (angka % 5 === 0) {
+                hasil = "Buzz";
+            }
+
+            else {
+                hasil = "Bukan kelipatan 3 atau 5";
+            }
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
+
+</body>
+</html>
