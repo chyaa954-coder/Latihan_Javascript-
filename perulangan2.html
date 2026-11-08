@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Mundur</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            color: #2875ad;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+
+        <h2>Hitung Mundur</h2>
+
+        <p>Klik tombol untuk memulai:</p>
+
+        <button onclick="hitungMundur()">
+            Mulai Countdown
+        </button>
+
+        <p id="hasil"></p>
+
+    </div>
+
+    <script>
+        
+function hitungMundur() {
+
+    let angka = 3;
+
+    document.getElementById("hasil").innerHTML = angka;
+
+    let waktu = setInterval(function() {
+
+        angka--;
+
+        if (angka >= 1) {
+            document.getElementById("hasil").innerHTML = angka;
+        } else {
+            clearInterval(waktu);
+
+            document.getElementById("hasil").innerHTML = "Start!";
+        }
+
+    }, 1000);
+
+}
+
+    </script>
+
+</body>
+</html>
