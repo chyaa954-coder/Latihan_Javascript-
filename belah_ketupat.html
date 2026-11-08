@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Belah Ketupat</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .bingkai {
+            background: white;
+            border: 3px solid blue;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        pre {
+            font-family: monospace;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+            display: inline-block;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+        <h2>Belah Ketupat</h2>
+
+        <label>Masukkan jumlah baris:</label>
+        <br><br>
+
+        <input type="number" id="baris" value="4">
+
+        <br><br>
+
+        <button onclick="buatBelahKetupat()">
+            Tampilkan
+        </button>
+
+        <pre id="hasil"></pre>
+    </div>
+
+    <script>
+        function buatBelahKetupat() {
+            let baris = Number(
+                document.getElementById("baris").value
+            );
+
+            let hasil = "";
+            let pola = [];
+
+            if (baris <= 0 || !Number.isInteger(baris)) {
+                hasil = "Masukkan angka yang benar!";
+            } else {
+
+                // Bagian atas
+                for (let i = 1; i <= baris; i++) {
+                    let bintang = "";
+
+                    for (let j = 1; j <= (2 * i - 1); j++) {
+                        bintang += "* ";
+                    }
+
+                    pola.push(bintang.trimEnd());
+                }
+
+                // Bagian bawah
+                for (let i = baris - 1; i >= 1; i--) {
+                    let bintang = "";
+
+                    for (let j = 1; j <= (2 * i - 1); j++) {
+                        bintang += "* ";
+                    }
+
+                    pola.push(bintang.trimEnd());
+                }
+
+                // Merapikan posisi setiap baris
+                let lebar = pola[baris - 1].length;
+
+                for (let i = 0; i < pola.length; i++) {
+                    let spasi = Math.floor(
+                        (lebar - pola[i].length) / 2
+                    );
+
+                    hasil += " ".repeat(spasi);
+                    hasil += pola[i] + "\n";
+                }
+            }
+
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+
+</body>
+</html>
+
