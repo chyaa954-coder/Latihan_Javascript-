@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Perulangan Angka 1-5</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .bingkai {
+            background-color: white;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h2 {
+            color: #2875ad;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            color: #2875ad;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+
+        <h2>Cetak Angka 1 hingga 5</h2>
+
+        <p>Klik tombol untuk menampilkan angka:</p>
+
+        <button onclick="tampilkanAngka()">
+            Tampilkan Angka
+        </button>
+
+        <p id="hasil"></p>
+
+    </div>
+
+    <script>
+        function tampilkanAngka() {
+
+            let angka = "";
+
+            for (let i = 1; i <= 5; i++) {
+                angka += i + "<br>";
+            }
+
+            document.getElementById("hasil").innerHTML = angka;
+
+        }
+    </script>
+
+</body>
+</html>
