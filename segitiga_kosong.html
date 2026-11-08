@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Segitiga Kosong</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .bingkai {
+            background: white;
+            border: 3px solid blue;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        pre {
+            font-family: monospace;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+            display: inline-block;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bingkai">
+        <h2>Segitiga Kosong</h2>
+
+        <label>Masukkan jumlah baris:</label>
+        <br><br>
+
+        <input type="number" id="baris" value="5">
+
+        <br><br>
+
+        <button onclick="buatSegitiga()">Tampilkan</button>
+
+        <pre id="hasil"></pre>
+    </div>
+
+    <script>
+        function buatSegitiga() {
+            let baris = Number(
+                document.getElementById("baris").value
+            );
+
+            let hasil = "";
+
+            if (baris < 2 || !Number.isInteger(baris)) {
+                hasil = "Masukkan angka minimal 2!";
+            } else {
+
+                for (let i = 1; i <= baris; i++) {
+
+                    hasil += "  ".repeat(baris - i);
+
+                    for (let j = 1; j <= (2 * i - 1); j++) {
+
+                        if (i == baris || j == 1 || j == (2 * i - 1)) {
+                            hasil += "* ";
+                        } else {
+                            hasil += "  ";
+                        }
+                    }
+
+                    hasil += "\n";
+                }
+            }
+
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+
+</body>
+</html>
